@@ -8,6 +8,9 @@ function $(selector) {
     hide: () => {
       self.element.style.display = "none";
     },
+    attr: (name, value) => {
+      self.element.setAttribute(name, value);
+    },
   };
   return self;
 }
@@ -21,3 +24,6 @@ $("h2").on("click", () => {
 
 // hide function
 $("h3").hide();
+
+// set a attribute
+$("h4").attr("class", "myClass");
