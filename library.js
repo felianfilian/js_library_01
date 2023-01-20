@@ -9,7 +9,11 @@ function $(selector) {
       self.element.style.display = "none";
     },
     attr: (name, value) => {
-      self.element.setAttribute(name, value);
+      if (value == null) {
+        console.log(self.element.getAttribute(name));
+      } else {
+        self.element.setAttribute(name, value);
+      }
     },
   };
   return self;
@@ -25,5 +29,8 @@ $("h2").on("click", () => {
 // hide function
 $("h3").hide();
 
-// set a attribute
-$("h4").attr("class", "myClass");
+// get attribute
+$("h4").attr("class");
+
+// set attribute
+$("h5").attr("class", "myClass");
